@@ -1,0 +1,19 @@
+<h1><%= @inquiry.first_name %> <%= @inquiry.last_name %></h1>
+
+<div>
+  <p><strong>Subject:</strong></p>
+  <%= @inquiry.subject %>
+</div>
+
+<div>
+  <p><strong>Description:</strong></p>
+  <%= @inquiry.description %>
+</div>
+
+<div>
+  <p><strong>Email:</strong></p>
+  <%= @inquiry.email %>
+</div>
+<br><hr><br>
+<%= link_to 'Edit', edit_inquiry_path(@inquiry) %>   
+<%= link_to 'Back', inquiries_path %>

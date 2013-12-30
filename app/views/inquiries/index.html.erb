@@ -1,0 +1,24 @@
+<h1>Contact Inquiries</h1>
+<hr><br>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>Subject</th>
+      <th>Description</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @inquiries.each do |inquiry| %>
+    <tr>
+      <td><%= inquiry.last_name %></td>
+      <td><%= link_to inquiry.subject, inquiry %></td>
+      <td><%= inquiry.description %></td>
+      <td><%= link_to 'X', inquiry, method: :delete, data: { confirm: 'Are you sure about that?'} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Add new inquiry', new_inquiry_path %>
